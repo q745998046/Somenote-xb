@@ -1,0 +1,27 @@
+<div class="login">
+    <div class="message">注册</div>
+    <div id="darkbannerwrap"></div>
+    
+    <form role="form" name="myfor">
+		<input name="action" value="login" type="hidden">
+		<div class="form-group">
+    <label for="exampleInputEmail1">User Name:</label>
+    <input ng-model="updata.username" type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name" required name="use" ng-minlength="6" ng-maxlength="12" ng-pattern="/[a-zA-Z]\w{1,9}/"><br />
+    <span ng-show="myfor.use.$invalid">*请输入字母开头的6-12用户名</span>
+    <span style="color: greenyellow;" ng-hide="myfor.use.$invalid">*输入正确</span>
+  </div>
+		<hr class="hr15">
+		<div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input ng-model="updata.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="pass" ng-minlength="6" ng-maxlength="12"><br />
+    <span ng-show="myfor.pass.$invalid">*请输入6-12密码</span>
+    <span style="color: greenyellow;" ng-hide="myfor.pass.$invalid">*输入正确</span>
+  </div>
+		<hr class="hr15">
+		<button ng-disabled="myfor.$invalid" ng-click="add()" style="width: 100%;" type="button" class="btn btn-info">注册</button>
+		<!--<hr class="hr20">
+		 <a onClick="alert('请联系管理员')">忘记密码</a>-->
+		 
+	</form>
+
+</div>
