@@ -7,7 +7,6 @@ angular.module('somenoteApp').controller('zc',['$scope','$http','server','$state
 			data:$scope.updata
 		}).success(function(e){
 			//debugger
-			$cookieStore.put("username",$scope.updata.username);
 			$state.go('denglu')
 		})
 	}

@@ -2,6 +2,7 @@ angular.module('somenoteApp').controller('dl',['$scope','$http','server','$state
 	if($cookies.get('usernam',$scope.updata)){
 		$state.go('sy')
 	}
+	
 	$scope.dl=function(){
 		$http({
 			method:'post',
@@ -9,6 +10,7 @@ angular.module('somenoteApp').controller('dl',['$scope','$http','server','$state
 			data:$scope.updata
 		}).success(function(e){
 			debugger
+			$cookieStore.put("uid",e.uid);		
 			$state.go('sy')
 			if($scope.abc==true){
 				$cookieStore.put("usernam",$scope.updata);				
